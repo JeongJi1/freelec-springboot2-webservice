@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor  // 파라미터가 없는 기본 생성자를 자동으로 생성
 @Entity
 public class User extends BaseTimeEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,11 +31,21 @@ public class User extends BaseTimeEntity {
     private Role role;
 
     @Builder
-    public User(Long id, String name, String email, String picture, Role role) {
-        this.id = id;
+    public User(String name, String email, String picture, Role role){
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
+    }
+
+    public User update(String name, String picture){
+        this.name = name;
+        this.picture = picture;
+
+        return this;
+    }
+
+    public String getRoleKey(){
+        return this.role.getKey();
     }
 }
