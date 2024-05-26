@@ -11,6 +11,11 @@
                     {{/userName}}
                     {{^userName}}
                         <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                        <!--
+                        application-oauth.properties 에 등록한 redirect-uri 값에 맞춰 자동 등록
+                        /oauth2/authorization/ 까지 고정 마지막 Path만 소셜 로그인 코드 사용
+                        -->
+                        <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
                     {{/userName}}
                 </div>
             </div>
