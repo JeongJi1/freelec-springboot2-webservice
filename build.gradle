@@ -41,7 +41,7 @@ dependencies {
 
     // 401 오류로 인한 주석처리
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
-    //testImplementation('org.springframework.security:spring-security-test')
+    testImplementation('org.springframework.security:spring-security-test')
 }
 
 
